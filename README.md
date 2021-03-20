@@ -1,6 +1,6 @@
 # helm-grafana
 
-Helm chart for installing Grafana.
+Example chart to install Grafana in your Kubernetes cluster
 
 Chart Reference - https://github.com/grafana/helm-charts/tree/main/charts/grafana
 
