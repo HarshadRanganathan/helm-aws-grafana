@@ -6,7 +6,7 @@ Chart Reference - https://github.com/grafana/helm-charts/tree/main/charts/grafan
 
 |File|Description|
 |--|--|
-|thanos-values.yaml | Sample config with Thanos Querier as datasource|
+|configs/thanos-values.yaml | Sample config with Thanos Querier as datasource|
 
 ## Install/Upgrade Chart
 
