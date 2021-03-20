@@ -1,0 +1,12 @@
+persistence:
+  enabled: true
+
+datasources: 
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://thanos-query-http:10902
+      access: proxy
+      isDefault: true
