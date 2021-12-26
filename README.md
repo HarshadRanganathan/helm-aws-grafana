@@ -13,7 +13,7 @@ Chart Reference - https://github.com/grafana/helm-charts/tree/main/charts/grafan
 Sample command to install (or) upgrade the chart -
 
 ```bash
-helm upgrade -i grafana . -n platform --values=configs/thanos-values.yaml
+helm upgrade -i grafana . -n platform --values=stages/shared-values.yaml --values=stages/prod/prod-values.yaml
 ```
 
 ## Admin password
