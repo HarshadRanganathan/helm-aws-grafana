@@ -15,3 +15,11 @@ Sample command to install (or) upgrade the chart -
 ```bash
 helm upgrade -i grafana . -n platform --values=configs/thanos-values.yaml
 ```
+
+## Admin password
+
+Get admin password by running this command:
+
+```bash
+kubectl get secret --namespace watcher grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
