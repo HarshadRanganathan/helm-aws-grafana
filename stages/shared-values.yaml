@@ -1,0 +1,32 @@
+persistence:
+  enabled: true
+
+datasources: 
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://thanos-query-http:10902
+      access: proxy
+      isDefault: true
+
+service:
+  type: NodePort
+
+grafana.ini:
+  auth.anonymous:
+    enabled: true
+    org_role: Editor
+  feature_toggles:
+    enable: ngalert
+
+ingress:
+  enabled: true
+  path: /*
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
